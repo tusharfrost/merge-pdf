@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Try the exampdfx.com PDF merge demo. Upload, arrange, and export PDFs in one clean browser workflow.">
+  <title>Merge PDF | exampdfx.com</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+  <link rel="stylesheet" href="css/vendor.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body data-page="merge">
+  <div class="site-shell">
+    <div data-include="partials/header.html"></div>
+
+    <main class="tool-main">
+      <section class="tool-hero">
+        <div class="page-wrap tool-hero-grid">
+          <div>
+            <span class="eyebrow">Interactive tool demo</span>
+            <h1>Merge PDF files in one clean session.</h1>
+            <p class="hero-text">
+              This page is designed for demos, portfolios, and GitHub deployment. It keeps the exampdfx.com brand front and center while showing a realistic merge flow.
+            </p>
+          </div>
+          <aside class="status-panel glass-card">
+            <span class="status-pill" id="libraryStatus">Loading merge library...</span>
+            <p>Works best when hosted online, including GitHub Pages. The UI still renders as a polished demo even if the live PDF engine is unavailable.</p>
+          </aside>
+        </div>
+      </section>
+
+      <section class="tool-section">
+        <div class="page-wrap tool-grid">
+          <div class="tool-surface glass-card">
+            <div class="tool-toolbar">
+              <div>
+                <h2>Upload Files</h2>
+                <p>Select two or more PDF files and arrange them in the order you want.</p>
+              </div>
+              <label class="button button-primary file-trigger" for="pdfInput">Choose PDFs</label>
+            </div>
+
+            <input id="pdfInput" class="visually-hidden" type="file" accept=".pdf,application/pdf" multiple>
+
+            <button id="dropZone" class="drop-zone" type="button">
+              <strong>Drop PDF files here</strong>
+              <span>or click the button above to browse</span>
+            </button>
+
+            <div class="tool-actions">
+              <input id="filenameInput" class="filename-input" type="text" value="exampdfx-merged" aria-label="Output file name">
+              <button id="mergeButton" class="button button-accent" type="button">Merge and Download</button>
+              <button id="clearButton" class="button button-secondary" type="button">Clear List</button>
+            </div>
+
+            <div id="feedback" class="feedback" aria-live="polite">Add PDF files to begin.</div>
+
+            <ul id="fileList" class="file-list" aria-live="polite"></ul>
+          </div>
+
+          <aside class="tool-sidebar">
+            <div class="glass-card side-card">
+              <h3>Demo Notes</h3>
+              <ul class="side-list">
+                <li>Branding set to `exampdfx.com`</li>
+                <li>Local CSS and vendor scripts included</li>
+                <li>Header and footer are reusable partials</li>
+              </ul>
+            </div>
+            <div class="glass-card side-card">
+              <h3>Why it works for GitHub</h3>
+              <p>No backend is required for the website layout, and the merge flow runs in the browser when the PDF library loads successfully.</p>
+            </div>
+          </aside>
+        </div>
+      </section>
+    </main>
+
+    <div data-include="partials/footer.html"></div>
+  </div>
+
+  <script src="https://unpkg.com/pdf-lib/dist/pdf-lib.min.js" defer></script>
+  <script src="vendor/component-loader.js" defer></script>
+  <script src="vendor/site.js" defer></script>
+  <script src="vendor/merge-demo.js" defer></script>
+</body>
+</html>
